@@ -1,27 +1,26 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
-import PropTypes from 'prop-types'
-import {fetchTopRatedMovies} from '../store/actions'
-
-
-import logo from './logo.svg'
+import {fetchTopRatedMovies} from '../../store/actions';
+import logo from '../../assets/logo.svg'
 import './MovieLibrary.css'
-import {getMovies} from '../store/selectors'
-import MoviesList from './MoviesList'
+import {getMovies} from '../../store/selectors'
+import MoviesBoxes from "./../MoviesBoxes/MoviesBoxes";
+import toCamelCase from "../../utils/toCamelCase";
 
 class MovieLibrary extends Component {
 
   static propTypes = {
 
-  }
+  };
 
   componentDidMount() {
-    const {fetchTopRatedMovies} = this.props
+    const { fetchTopRatedMovies } = this.props;
     fetchTopRatedMovies()
-  }
+  };
 
   render() {
-    const {movies} = this.props
+    const {movies} = this.props;
+
     return (
       <div className="MovieLibrary">
         <header className="ML-header">
@@ -29,7 +28,7 @@ class MovieLibrary extends Component {
           <h1 className="ML-title">Movies</h1>
         </header>
         <div className="ML-intro">
-          { movies.length && <MoviesList movies={movies}/> }
+          { movies.length && <MoviesBoxes movies={toCamelCase(movies)}/> }
         </div>
       </div>
     );

@@ -1,0 +1,11 @@
+@import '../../styles/keyFrames';
+
+.modal {
+  &__close-icon {
+    float: right;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

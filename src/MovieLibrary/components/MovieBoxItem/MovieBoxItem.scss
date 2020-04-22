@@ -1,0 +1,72 @@
+@import "src/MovieLibrary/styles/keyFrames";
+
+.movie-box-item {
+  margin: 10px;
+  transform: scale(1);
+  animation: transform 0.25s;
+  color: white;
+  max-width: 200px;
+
+  &:hover {
+    transform: scale(1.05);
+    transition: 0.25s;
+  }
+
+  &__thumbnail {
+    position: relative;
+    margin-bottom: 5px;
+
+    &:hover:after {
+      content: '';
+      position: absolute;
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      background: black;
+      opacity: 0.25;
+      cursor: pointer;
+      animation: quarterFadeIn 0.25s;
+    }
+  }
+
+  &__rate {
+    align-self: self-start;
+    display: flex;
+    margin-bottom: 10px;
+
+    img {
+      width: 20px;
+      margin-right: 10px;
+    }
+
+    img, span {
+      display: inline-block;
+      align-self: center;
+    }
+  }
+
+  &__title {
+    text-align: left;
+  }
+
+  &__modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+  }
+
+  &-modal {
+    &__thumbnail {
+      margin-bottom: 50px;
+    }
+
+    &__overview {
+      font-size: 2rem;
+      color: white;
+    }
+  }
+}

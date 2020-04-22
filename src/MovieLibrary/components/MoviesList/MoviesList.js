@@ -2,22 +2,22 @@ import React, { Component, PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
-import TMDBImage from './TMDBImage'
+import TMDBImage from '../TMDBImage/TMDBImage'
 import './MoviesList.css'
 
 export default class MoviesList extends PureComponent {
 
   static propTypes = {
     movies: PropTypes.array.isRequired
-  }
+  };
 
   state = {
     selectedMovie: null
-  }
+  };
 
-  handleSelectMovie = item => this.setState({selectedMovie: item})
+  handleSelectMovie = item => this.setState({selectedMovie: item});
 
-  handleSortingChange = sortingType => console.log(sortingType)
+  handleSortingChange = sortingType => console.log(sortingType);
 
   render() {
 
@@ -56,17 +56,17 @@ const ExpandedMovieItem = ({movie: {title, original_title, poster_path, overview
       <span>{overview}</span>
     </div>
   </div>
-)
+);
 
 class MovieListItem extends Component {
 
   handleClick = () => {
-    const {movie, onSelect} = this.props
+    const {movie, onSelect} = this.props;
     onSelect(movie)
-  }
+  };
 
   render() {
-    const {movie: {title, vote_average}, isSelected} = this.props
+    const {movie: {title, vote_average}, isSelected} = this.props;
     return (
       <div className={classNames('movie-list-item', {'selected': isSelected})} onClick={this.handleClick}>{title}({vote_average})</div>
     )

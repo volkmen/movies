@@ -1,0 +1,13 @@
+.movies-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1600px;
+  margin: 0 auto;
+  background: #222222;
+}
+
+.movies-boxes::after {
+  content: "";
+  width: 200px;
+}
