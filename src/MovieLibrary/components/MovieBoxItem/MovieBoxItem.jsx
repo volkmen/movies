@@ -8,11 +8,11 @@ import './MovieBoxItem.scss';
 const MovieShape = PropTypes.shape({
     posterPath: PropTypes.string.isRequired,
     voteAverage: PropTypes.number.isRequired,
-    originalTitle: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
     overview: PropTypes.string.isRequired,
 });
 
-export const MovieBoxItem = ({ movie: { posterPath, voteAverage, originalTitle, overview } }) => {
+const MovieBoxItem = ({ movie: { posterPath, voteAverage, title, overview } }) => {
     const [modalIsOpened, setModalIsOpened] = useState(false);
 
     return (
@@ -25,7 +25,7 @@ export const MovieBoxItem = ({ movie: { posterPath, voteAverage, originalTitle, 
                     <img className="movie-box-item-rate__icon" src={starSrc} alt="Rate" width="20px"/>
                     <span>{ voteAverage }</span>
                 </div>
-                <div className="movie-box-item__title">{ originalTitle }</div>
+                <div className="movie-box-item__title">{ title }</div>
             </div>
             <ModalComponent
                 isOpen={modalIsOpened}
@@ -47,3 +47,6 @@ export const MovieBoxItem = ({ movie: { posterPath, voteAverage, originalTitle, 
 MovieBoxItem.propTypes = {
     movie: MovieShape.isRequired
 };
+
+
+export default MovieBoxItem

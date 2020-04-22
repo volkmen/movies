@@ -1,13 +1,22 @@
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
 .movies-boxes {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  max-width: 1600px;
-  margin: 0 auto;
   background: #222222;
 }
 
 .movies-boxes::after {
   content: "";
   width: 200px;
+}
+
+.movies-sort-dropdown {
+  text-align: left;
+  padding: 10px;
+  padding-bottom: 40px;
 }
