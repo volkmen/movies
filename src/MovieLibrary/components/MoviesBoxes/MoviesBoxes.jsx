@@ -52,6 +52,7 @@ const MoviesBoxes = ({ movies }) => {
                 case SORTING_TYPES.RATE: {
                     return secondMovie.rate - firstMovie.rate
                 }
+                default: return false
             }
         })
     }, [movies]);
@@ -59,10 +60,11 @@ const MoviesBoxes = ({ movies }) => {
     useEffect(() => {
         const sortedMoviesByValue = getSortedMoviesByType(selectedOption.value);
         setSortedMovies(sortedMoviesByValue);
+        // eslint-disable-next-line
     }, [movies, selectedOption]);
 
     return (
-        <div className="container">
+        <div className="container fadeIn">
             <div className="movies-sort-dropdown">
                 <SortDropdown
                     options={sortingOptions}

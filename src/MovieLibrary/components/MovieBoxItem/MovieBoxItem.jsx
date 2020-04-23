@@ -6,7 +6,7 @@ import starSrc from '../../assets/star.png';
 import './MovieBoxItem.scss';
 
 const MovieShape = PropTypes.shape({
-    posterPath: PropTypes.string.isRequired,
+    posterPath: PropTypes.string,
     voteAverage: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     overview: PropTypes.string.isRequired,

@@ -1,6 +1,7 @@
 .MovieLibrary {
   text-align: center;
   background: #222222;
+  min-height: 100vh;
 }
 
 .ML-logo {
