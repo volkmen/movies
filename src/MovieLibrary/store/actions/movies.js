@@ -16,11 +16,10 @@ const getMoviesError = payload => ({
     payload
 });
 
-export const fetchTopRatedMovies = (page) => dispatch => {
+export const fetchTopRatedMovies = (page => () => dispatch => {
     dispatch(getMoviesFetch());
 
-    return getMovies(page)
+    return getMovies(page++)
         .then(data => dispatch(getMoviesSuccess(toCamelCase(data.results))))
         .catch(e => dispatch(getMoviesError(e)))
-};
-
+})(1);
