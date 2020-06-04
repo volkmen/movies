@@ -17,7 +17,7 @@
     margin-bottom: 5px;
 
     &:hover:after {
-      content: '';
+      content: "";
       position: absolute;
       display: inline-block;
       width: 100%;
@@ -41,7 +41,8 @@
       margin-right: 10px;
     }
 
-    img, span {
+    img,
+    span {
       display: inline-block;
       align-self: center;
     }
@@ -57,6 +58,7 @@
     justify-content: center;
     height: 100%;
     text-align: center;
+    overflow: auto;
   }
 
   &-modal {

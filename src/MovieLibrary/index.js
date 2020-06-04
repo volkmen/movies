@@ -1,3 +1,3 @@
-import MovieLibrary from './components/MovieLibrary/MovieLibrary'
+import MovieLibrary from "./components/MovieLibrary/MovieLibrary";
 
-export default MovieLibrary
+export default MovieLibrary;
